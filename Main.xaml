@@ -1,6 +1,6 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="Main" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="1120,1622" sap2010:WorkflowViewState.IdRef="ActivityBuilder_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="Main" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="1057,2593" sap2010:WorkflowViewState.IdRef="ActivityBuilder_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <TextExpression.NamespacesForImplementation>
-    <scg:List x:TypeArguments="x:String" Capacity="56">
+    <scg:List x:TypeArguments="x:String" Capacity="31">
       <x:String>System.Activities</x:String>
       <x:String>System.Activities.Statements</x:String>
       <x:String>System.Activities.Expressions</x:String>
@@ -31,10 +31,11 @@
       <x:String>System.Xml.Serialization</x:String>
       <x:String>System.Reflection</x:String>
       <x:String>System.Runtime.InteropServices</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
     </scg:List>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
-    <scg:List x:TypeArguments="AssemblyReference" Capacity="27">
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="28">
       <AssemblyReference>System.Activities</AssemblyReference>
       <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
       <AssemblyReference>mscorlib</AssemblyReference>
@@ -62,17 +63,30 @@
       <AssemblyReference>UiPath.OCR.Activities.Design</AssemblyReference>
       <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
       <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Automate an HR Onboarding Process" sap:VirtualizedContainerService.HintSize="694,1457" sap2010:WorkflowViewState.IdRef="Sequence_4">
+  <sap:WorkflowViewStateService.ViewState>
+    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+      <x:Boolean x:Key="ShouldExpandAll">True</x:Boolean>
+    </scg:Dictionary>
+  </sap:WorkflowViewStateService.ViewState>
+  <Sequence DisplayName="Automate an HR Onboarding Process" sap:VirtualizedContainerService.HintSize="598,2428" sap2010:WorkflowViewState.IdRef="Sequence_4">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+        <x:Boolean x:Key="IsPinned">False</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <TryCatch DisplayName="Try to automate an HR Onboarding Process" sap:VirtualizedContainerService.HintSize="652,1364" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+    <TryCatch DisplayName="Try to automate an HR Onboarding Process" sap:VirtualizedContainerService.HintSize="556,2335" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
       <TryCatch.Try>
-        <Sequence DisplayName="The whole onboarding process" sap:VirtualizedContainerService.HintSize="614,1111" sap2010:WorkflowViewState.IdRef="Sequence_2">
+        <Sequence DisplayName="The whole onboarding process" sap:VirtualizedContainerService.HintSize="518,1635" sap2010:WorkflowViewState.IdRef="Sequence_2">
           <Sequence.Variables>
             <Variable x:TypeArguments="x:String" Name="NewEmployeesFile" />
             <Variable x:TypeArguments="sd:DataTable" Name="EmployeesToAdd" />
@@ -82,91 +96,223 @@
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <Sequence DisplayName="Read the new employees excel file" sap:VirtualizedContainerService.HintSize="572,77" sap2010:WorkflowViewState.IdRef="Sequence_1">
+          <Sequence DisplayName="Get the new employees file" sap:VirtualizedContainerService.HintSize="476,77" sap2010:WorkflowViewState.IdRef="Sequence_13">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                <x:Boolean x:Key="IsPinned">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <ui:SelectFile DisplayName="Select the new  employees file" Filter="All files (*.xlsx)|*.xlsx" sap:VirtualizedContainerService.HintSize="200,23" sap2010:WorkflowViewState.IdRef="SelectFile_1" SelectedFile="[NewEmployeesFile]" />
+          </Sequence>
+          <Sequence DisplayName="Read the New Employees File" sap:VirtualizedContainerService.HintSize="476,463" sap2010:WorkflowViewState.IdRef="Sequence_15">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <ui:ReadRange Range="{x:Null}" AddHeaders="True" DataTable="[EmployeesToAdd]" DisplayName="Read Range" sap:VirtualizedContainerService.HintSize="334,88" sap2010:WorkflowViewState.IdRef="ReadRange_1" SheetName="New Employees" WorkbookPath="[NewEmployeesFile]" />
+            <Sequence DisplayName="Add Employee Id, Email and Result data columns" sap:VirtualizedContainerService.HintSize="334,242" sap2010:WorkflowViewState.IdRef="Sequence_14">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <ui:AddDataColumn x:TypeArguments="x:String" AllowDBNull="{x:Null}" AutoIncrement="{x:Null}" Column="{x:Null}" MaxLength="{x:Null}" Unique="{x:Null}" ColumnName="ID" DataTable="[EmployeesToAdd]" DefaultValue="None" DisplayName="Add Data Column" sap:VirtualizedContainerService.HintSize="200,23" sap2010:WorkflowViewState.IdRef="AddDataColumn`1_4" />
+              <ui:AddDataColumn x:TypeArguments="x:String" AllowDBNull="{x:Null}" AutoIncrement="{x:Null}" Column="{x:Null}" MaxLength="{x:Null}" Unique="{x:Null}" ColumnName="Email" DataTable="[EmployeesToAdd]" DefaultValue="None" DisplayName="Add Data Column" sap:VirtualizedContainerService.HintSize="200,23" sap2010:WorkflowViewState.IdRef="AddDataColumn`1_5" />
+              <ui:AddDataColumn x:TypeArguments="x:String" AllowDBNull="{x:Null}" AutoIncrement="{x:Null}" Column="{x:Null}" MaxLength="{x:Null}" Unique="{x:Null}" ColumnName="Result" DataTable="[EmployeesToAdd]" DefaultValue="N/A" DisplayName="Add Data Column" sap:VirtualizedContainerService.HintSize="200,23" sap2010:WorkflowViewState.IdRef="AddDataColumn`1_6" />
+            </Sequence>
+          </Sequence>
+          <Sequence DisplayName="Add all new employess in HR website" sap:VirtualizedContainerService.HintSize="476,498" sap2010:WorkflowViewState.IdRef="Sequence_7">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <ui:ForEachRow CurrentIndex="{x:Null}" DataTable="[EmployeesToAdd]" DisplayName="Add New Employees" sap:VirtualizedContainerService.HintSize="319,405" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
+              <ui:ForEachRow.Body>
+                <ActivityAction x:TypeArguments="sd:DataRow">
+                  <ActivityAction.Argument>
+                    <DelegateInArgument x:TypeArguments="sd:DataRow" Name="NewEmployee" />
+                  </ActivityAction.Argument>
+                  <Sequence DisplayName="Add each employee from new employee file" sap:VirtualizedContainerService.HintSize="242,247" sap2010:WorkflowViewState.IdRef="Sequence_9">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="200,57" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[&quot;Attempting to save employee: &quot;+NewEmployee.Item(&quot;First Name&quot;).ToString+&quot; &quot;+NewEmployee.Item(&quot;Last Name&quot;).ToString]">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                          <x:Boolean x:Key="IsPinned">True</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                    </ui:LogMessage>
+                    <TryCatch DisplayName="Try to add an employee on HR website" sap:VirtualizedContainerService.HintSize="200,57" sap2010:WorkflowViewState.IdRef="TryCatch_2">
+                      <TryCatch.Variables>
+                        <Variable x:TypeArguments="x:String" Name="EmployeeId" />
+                        <Variable x:TypeArguments="x:String" Name="EmployeeEmail" />
+                      </TryCatch.Variables>
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                          <x:Boolean x:Key="IsPinned">True</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <TryCatch.Try>
+                        <Sequence DisplayName="Add an Employee" sap:VirtualizedContainerService.HintSize="200,77" sap2010:WorkflowViewState.IdRef="Sequence_11">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                              <x:Boolean x:Key="IsPinned">True</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                          <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke AddEmployeetoHRWebsite workflow" sap:VirtualizedContainerService.HintSize="334,57" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="AddEmployeetoHRWebsite.xaml">
+                            <ui:InvokeWorkflowFile.Arguments>
+                              <InArgument x:TypeArguments="x:String" x:Key="firstName">
+                                <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="NewEmployee.Item(&quot;First Name&quot;).ToString" />
+                              </InArgument>
+                              <InArgument x:TypeArguments="x:String" x:Key="lastName">
+                                <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="NewEmployee.Item(&quot;Last Name&quot;).ToString" />
+                              </InArgument>
+                              <InArgument x:TypeArguments="x:String" x:Key="gender">
+                                <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="NewEmployee.Item(&quot;Gender&quot;).ToString" />
+                              </InArgument>
+                              <InArgument x:TypeArguments="x:String" x:Key="designation">
+                                <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="NewEmployee.Item(&quot;Designation&quot;).ToString" />
+                              </InArgument>
+                              <InArgument x:TypeArguments="x:String" x:Key="dob">
+                                <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="NewEmployee.Item(&quot;Date of Birth&quot;).ToString" />
+                              </InArgument>
+                              <InArgument x:TypeArguments="x:String" x:Key="phoneNumber">
+                                <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="NewEmployee.Item(&quot;Phone Number&quot;).ToString" />
+                              </InArgument>
+                              <OutArgument x:TypeArguments="x:String" x:Key="id">
+                                <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="EmployeeId" />
+                              </OutArgument>
+                              <OutArgument x:TypeArguments="x:String" x:Key="email">
+                                <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="EmployeeEmail" />
+                              </OutArgument>
+                            </ui:InvokeWorkflowFile.Arguments>
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                <x:Boolean x:Key="IsPinned">True</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                          </ui:InvokeWorkflowFile>
+                          <Assign DisplayName="Add Employee Id data" sap:VirtualizedContainerService.HintSize="334,65" sap2010:WorkflowViewState.IdRef="Assign_5">
+                            <Assign.To>
+                              <OutArgument x:TypeArguments="x:Object">[NewEmployee.Item("ID")]</OutArgument>
+                            </Assign.To>
+                            <Assign.Value>
+                              <InArgument x:TypeArguments="x:Object">[EmployeeId]</InArgument>
+                            </Assign.Value>
+                          </Assign>
+                          <Assign DisplayName="Add Employee Email data" sap:VirtualizedContainerService.HintSize="334,65" sap2010:WorkflowViewState.IdRef="Assign_6">
+                            <Assign.To>
+                              <OutArgument x:TypeArguments="x:Object">[NewEmployee.Item("Email")]</OutArgument>
+                            </Assign.To>
+                            <Assign.Value>
+                              <InArgument x:TypeArguments="x:Object">[EmployeeEmail]</InArgument>
+                            </Assign.Value>
+                          </Assign>
+                          <Assign DisplayName="Add Employee Result as Success" sap:VirtualizedContainerService.HintSize="334,65" sap2010:WorkflowViewState.IdRef="Assign_3">
+                            <Assign.To>
+                              <OutArgument x:TypeArguments="x:Object">[NewEmployee.Item("Result")]</OutArgument>
+                            </Assign.To>
+                            <Assign.Value>
+                              <InArgument x:TypeArguments="x:Object">["Success"]</InArgument>
+                            </Assign.Value>
+                          </Assign>
+                          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,102" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="Info" Message="[&quot;Success saving employee: &quot;+NewEmployee.Item(&quot;First Name&quot;).ToString+&quot; &quot;+NewEmployee.Item(&quot;Last Name&quot;).ToString]">
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                          </ui:LogMessage>
+                        </Sequence>
+                      </TryCatch.Try>
+                      <TryCatch.Catches>
+                        <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="404,151" sap2010:WorkflowViewState.IdRef="Catch`1_2">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                          <ActivityAction x:TypeArguments="s:Exception">
+                            <ActivityAction.Argument>
+                              <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
+                            </ActivityAction.Argument>
+                            <Sequence DisplayName="Log and display error" sap:VirtualizedContainerService.HintSize="200,77" sap2010:WorkflowViewState.IdRef="Sequence_10">
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                  <x:Boolean x:Key="IsPinned">True</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                              <Assign DisplayName="Add Employee Result as Success" sap:VirtualizedContainerService.HintSize="334,65" sap2010:WorkflowViewState.IdRef="Assign_4">
+                                <Assign.To>
+                                  <OutArgument x:TypeArguments="x:Object">[NewEmployee.Item("Result")]</OutArgument>
+                                </Assign.To>
+                                <Assign.Value>
+                                  <InArgument x:TypeArguments="x:Object">["Failure"]</InArgument>
+                                </Assign.Value>
+                              </Assign>
+                              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,102" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Error" Message="[exception.Message]" />
+                              <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="334,60" sap2010:WorkflowViewState.IdRef="MessageBox_2" Text="[exception.Message]" />
+                            </Sequence>
+                          </ActivityAction>
+                        </Catch>
+                      </TryCatch.Catches>
+                    </TryCatch>
+                  </Sequence>
+                </ActivityAction>
+              </ui:ForEachRow.Body>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </ui:ForEachRow>
+          </Sequence>
+          <Sequence DisplayName="Write employee id and email address to employee file" sap:VirtualizedContainerService.HintSize="476,384" sap2010:WorkflowViewState.IdRef="Sequence_8">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">False</x:Boolean>
                 <x:Boolean x:Key="IsPinned">False</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <ui:SelectFile DisplayName="Select the new  employees file" Filter="All files (*.xls)|*.xls" sap:VirtualizedContainerService.HintSize="200,23" sap2010:WorkflowViewState.IdRef="SelectFile_1" SelectedFile="[NewEmployeesFile]" />
-            <ui:ExcelApplicationScope Password="{x:Null}" DisplayName="Open and read the NewEmployeesFile" sap:VirtualizedContainerService.HintSize="200,57" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_1" InstanceCachePeriod="3000" WorkbookPath="[NewEmployeesFile]">
+            <ui:ExcelApplicationScope Password="{x:Null}" CreateNewFile="False" DisplayName="Write to New Employees File" sap:VirtualizedContainerService.HintSize="434,291" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_2" InstanceCachePeriod="3000" WorkbookPath="[NewEmployeesFile]">
               <ui:ExcelApplicationScope.Body>
                 <ActivityAction x:TypeArguments="ui:WorkbookApplication">
                   <ActivityAction.Argument>
                     <DelegateInArgument x:TypeArguments="ui:WorkbookApplication" Name="ExcelWorkbookScope" />
                   </ActivityAction.Argument>
-                  <Sequence DisplayName="With the NewEmployeesFile Do" sap:VirtualizedContainerService.HintSize="376,153" sap2010:WorkflowViewState.IdRef="Sequence_5">
+                  <Sequence DisplayName="Write the Employees  data table" sap:VirtualizedContainerService.HintSize="376,181" sap2010:WorkflowViewState.IdRef="Sequence_12">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
-                    <ui:ExcelReadRange AddHeaders="True" DataTable="[EmployeesToAdd]" DisplayName="Read New Employees Data" sap:VirtualizedContainerService.HintSize="334,60" sap2010:WorkflowViewState.IdRef="ExcelReadRange_1" SheetName="Employees">
-                      <ui:ExcelReadRange.Range>
-                        <InArgument x:TypeArguments="x:String">
-                          <Literal x:TypeArguments="x:String" Value="" />
-                        </InArgument>
-                      </ui:ExcelReadRange.Range>
-                    </ui:ExcelReadRange>
+                    <ui:ExcelWriteRange AddHeaders="True" DataTable="[EmployeesToAdd]" DisplayName="Write Range" sap:VirtualizedContainerService.HintSize="334,88" sap2010:WorkflowViewState.IdRef="ExcelWriteRange_1" SheetName="Employees" StartingCell="A1" />
                   </Sequence>
                 </ActivityAction>
               </ui:ExcelApplicationScope.Body>
-              <sap:WorkflowViewStateService.ViewState>
-                <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                </scg:Dictionary>
-              </sap:WorkflowViewStateService.ViewState>
             </ui:ExcelApplicationScope>
-            <Sequence DisplayName="Add Employee Id, Email and Result data columns" sap:VirtualizedContainerService.HintSize="200,77" sap2010:WorkflowViewState.IdRef="Sequence_6">
-              <sap:WorkflowViewStateService.ViewState>
-                <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                </scg:Dictionary>
-              </sap:WorkflowViewStateService.ViewState>
-              <ui:AddDataColumn x:TypeArguments="x:Object" AutoIncrement="{x:Null}" Column="{x:Null}" DefaultValue="{x:Null}" MaxLength="{x:Null}" AllowDBNull="False" ColumnName="Employee ID" DataTable="[EmployeesToAdd]" DisplayName="Add Employee Id Column" sap:VirtualizedContainerService.HintSize="200,23" sap2010:WorkflowViewState.IdRef="AddDataColumn`1_1" Unique="True" />
-              <ui:AddDataColumn x:TypeArguments="x:Object" Column="{x:Null}" DefaultValue="{x:Null}" MaxLength="{x:Null}" AllowDBNull="False" AutoIncrement="False" ColumnName="Email" DataTable="[EmployeesToAdd]" DisplayName="Add Employee Email Column" sap:VirtualizedContainerService.HintSize="200,23" sap2010:WorkflowViewState.IdRef="AddDataColumn`1_2" Unique="True" />
-              <ui:AddDataColumn x:TypeArguments="x:Object" Column="{x:Null}" MaxLength="{x:Null}" AllowDBNull="False" AutoIncrement="False" ColumnName="Result" DataTable="[EmployeesToAdd]" DefaultValue="[&quot;N/A&quot;]" DisplayName="Add Result" sap:VirtualizedContainerService.HintSize="200,23" sap2010:WorkflowViewState.IdRef="AddDataColumn`1_3" Unique="False" />
-            </Sequence>
-          </Sequence>
-          <Sequence DisplayName="Add all new employess in HR website" sap:VirtualizedContainerService.HintSize="572,772" sap2010:WorkflowViewState.IdRef="Sequence_7">
-            <sap:WorkflowViewStateService.ViewState>
-              <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-              </scg:Dictionary>
-            </sap:WorkflowViewStateService.ViewState>
-            <ui:ForEachRow CurrentIndex="{x:Null}" DataTable="[EmployeesToAdd]" DisplayName="Add New Employees" sap:VirtualizedContainerService.HintSize="530,679" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
-              <ui:ForEachRow.Body>
-                <ActivityAction x:TypeArguments="sd:DataRow">
-                  <ActivityAction.Argument>
-                    <DelegateInArgument x:TypeArguments="sd:DataRow" Name="NewEmployee" />
-                  </ActivityAction.Argument>
-                  <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="480,521" sap2010:WorkflowViewState.IdRef="Sequence_9">
-                    <sap:WorkflowViewStateService.ViewState>
-                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                      </scg:Dictionary>
-                    </sap:WorkflowViewStateService.ViewState>
-                    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="438,102" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[&quot;Attempting to save employee: &quot;]" />
-                    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="438,286" sap2010:WorkflowViewState.IdRef="TryCatch_2" />
-                  </Sequence>
-                </ActivityAction>
-              </ui:ForEachRow.Body>
-            </ui:ForEachRow>
-          </Sequence>
-          <Sequence DisplayName="Write emploee id and email address to employee file" sap:VirtualizedContainerService.HintSize="572,89" sap2010:WorkflowViewState.IdRef="Sequence_8">
-            <sap:WorkflowViewStateService.ViewState>
-              <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-              </scg:Dictionary>
-            </sap:WorkflowViewStateService.ViewState>
           </Sequence>
         </Sequence>
       </TryCatch.Try>
       <TryCatch.Catches>
-        <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="404,26" sap2010:WorkflowViewState.IdRef="Catch`1_1">
+        <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="522,369" sap2010:WorkflowViewState.IdRef="Catch`1_1">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">False</x:Boolean>
