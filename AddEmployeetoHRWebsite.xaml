@@ -1,4 +1,24 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="AddEmployeetoHRWebsite" sap:VirtualizedContainerService.HintSize="499,553" sap2010:WorkflowViewState.IdRef="ActivityBuilder_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="AddEmployeetoHRWebsite" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="firstName" Type="InArgument(x:String)" />
+    <x:Property Name="lastName" Type="InArgument(x:String)" />
+    <x:Property Name="gender" Type="InArgument(x:String)" />
+    <x:Property Name="designation" Type="InArgument(x:String)" />
+    <x:Property Name="dob" Type="InArgument(x:String)" />
+    <x:Property Name="employeeId" Type="OutArgument(x:String)" />
+    <x:Property Name="emmplyeeEmail" Type="OutArgument(x:String)" />
+  </x:Members>
+  <this:AddEmployeetoHRWebsite.firstName>
+    <InArgument x:TypeArguments="x:String" />
+  </this:AddEmployeetoHRWebsite.firstName>
+  <this:AddEmployeetoHRWebsite.lastName>
+    <InArgument x:TypeArguments="x:String" />
+  </this:AddEmployeetoHRWebsite.lastName>
+  <this:AddEmployeetoHRWebsite.gender>
+    <InArgument x:TypeArguments="x:String" />
+  </this:AddEmployeetoHRWebsite.gender>
+  <sap:VirtualizedContainerService.HintSize>1120,1806</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="32">
       <x:String>System.Activities</x:String>
@@ -63,27 +83,75 @@
       <AssemblyReference>System.ServiceModel.Activities</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Add Employee to HR Website" sap:VirtualizedContainerService.HintSize="509,428" sap2010:WorkflowViewState.IdRef="Sequence_2">
+  <Sequence DisplayName="Add Employee to HR Website" sap:VirtualizedContainerService.HintSize="755,2026" sap2010:WorkflowViewState.IdRef="Sequence_2">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:OpenBrowser BrowserType="{x:Null}" CommunicationMethod="{x:Null}" Hidden="{x:Null}" NewSession="{x:Null}" Private="{x:Null}" UiBrowser="{x:Null}" DisplayName="Open Browser" sap:VirtualizedContainerService.HintSize="467,335" sap2010:WorkflowViewState.IdRef="OpenBrowser_1" Url="https://excelcult.com/hr-on-boarding-process-form/">
+    <ui:OpenBrowser BrowserType="{x:Null}" CommunicationMethod="{x:Null}" Hidden="{x:Null}" NewSession="{x:Null}" Private="{x:Null}" UiBrowser="{x:Null}" DisplayName="Open Browser" sap:VirtualizedContainerService.HintSize="713,1035" sap2010:WorkflowViewState.IdRef="OpenBrowser_1" Url="https://excelcult.com/hr-on-boarding-process-form/">
       <ui:OpenBrowser.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Add Employee Details" sap:VirtualizedContainerService.HintSize="376,228" sap2010:WorkflowViewState.IdRef="Sequence_1">
+          <Sequence DisplayName="Add Employee Details" sap:VirtualizedContainerService.HintSize="376,928" sap2010:WorkflowViewState.IdRef="Sequence_1">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <ui:TypeInto AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" Text="{x:Null}" Activate="True" DisplayName="Type Into 'INPUT  fname'" sap:VirtualizedContainerService.HintSize="334,135" sap2010:WorkflowViewState.IdRef="TypeInto_1">
+            <ui:TypeInto AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" Activate="True" DisplayName="Type Employee first name into  fname" EmptyField="True" sap:VirtualizedContainerService.HintSize="334,135" sap2010:WorkflowViewState.IdRef="TypeInto_1" Text="[firstName]">
               <ui:TypeInto.Target>
                 <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="65ce003b-7934-4b44-9cc4-0689252bb1dd" InformativeScreenshot="66af43f383af1a570b5768467cf45fb2" Selector="&lt;webctrl id='fname' tag='INPUT' /&gt;">
+                  <ui:Target.TimeoutMS>
+                    <InArgument x:TypeArguments="x:Int32" />
+                  </ui:Target.TimeoutMS>
+                  <ui:Target.WaitForReady>
+                    <InArgument x:TypeArguments="ui:WaitForReady" />
+                  </ui:Target.WaitForReady>
+                </ui:Target>
+              </ui:TypeInto.Target>
+            </ui:TypeInto>
+            <ui:TypeInto AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" Activate="True" DisplayName="Type Employee last name into lname" EmptyField="True" sap:VirtualizedContainerService.HintSize="334,135" sap2010:WorkflowViewState.IdRef="TypeInto_2" Text="[lastName]">
+              <ui:TypeInto.Target>
+                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="65ce003b-7934-4b44-9cc4-0689252bb1dd" InformativeScreenshot="6c9e8f3ca89b20e25f3c57075767d59d" Selector="&lt;webctrl id='lname' tag='INPUT' /&gt;">
+                  <ui:Target.TimeoutMS>
+                    <InArgument x:TypeArguments="x:Int32" />
+                  </ui:Target.TimeoutMS>
+                  <ui:Target.WaitForReady>
+                    <InArgument x:TypeArguments="ui:WaitForReady" />
+                  </ui:Target.WaitForReady>
+                </ui:Target>
+              </ui:TypeInto.Target>
+            </ui:TypeInto>
+            <ui:TypeInto AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" Activate="True" DisplayName="Type Employee DOB into DOB" EmptyField="True" sap:VirtualizedContainerService.HintSize="334,135" sap2010:WorkflowViewState.IdRef="TypeInto_3" Text="[firstName]">
+              <ui:TypeInto.Target>
+                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="65ce003b-7934-4b44-9cc4-0689252bb1dd" InformativeScreenshot="2010631b7a7b9504b750a943647d822d" Selector="&lt;webctrl id='dob' tag='INPUT' /&gt;">
+                  <ui:Target.TimeoutMS>
+                    <InArgument x:TypeArguments="x:Int32" />
+                  </ui:Target.TimeoutMS>
+                  <ui:Target.WaitForReady>
+                    <InArgument x:TypeArguments="ui:WaitForReady" />
+                  </ui:Target.WaitForReady>
+                </ui:Target>
+              </ui:TypeInto.Target>
+            </ui:TypeInto>
+            <ui:TypeInto AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" Activate="True" DisplayName="Type Employee Designation into Designation" EmptyField="True" sap:VirtualizedContainerService.HintSize="334,135" sap2010:WorkflowViewState.IdRef="TypeInto_4" Text="[firstName]">
+              <ui:TypeInto.Target>
+                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="65ce003b-7934-4b44-9cc4-0689252bb1dd" InformativeScreenshot="bf2720f19eaac0dae0b0518c452dd44e" Selector="&lt;webctrl id='designation' tag='INPUT' /&gt;">
+                  <ui:Target.TimeoutMS>
+                    <InArgument x:TypeArguments="x:Int32" />
+                  </ui:Target.TimeoutMS>
+                  <ui:Target.WaitForReady>
+                    <InArgument x:TypeArguments="ui:WaitForReady" />
+                  </ui:Target.WaitForReady>
+                </ui:Target>
+              </ui:TypeInto.Target>
+            </ui:TypeInto>
+            <ui:TypeInto AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" Activate="True" DisplayName="Type Employee phone into mobile number" EmptyField="True" sap:VirtualizedContainerService.HintSize="334,135" sap2010:WorkflowViewState.IdRef="TypeInto_5" Text="[firstName]">
+              <ui:TypeInto.Target>
+                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="65ce003b-7934-4b44-9cc4-0689252bb1dd" InformativeScreenshot="8f8e7e90304cfc457357c372cf59416c" Selector="&lt;webctrl id='mobile' tag='INPUT' /&gt;">
                   <ui:Target.TimeoutMS>
                     <InArgument x:TypeArguments="x:Int32" />
                   </ui:Target.TimeoutMS>
@@ -97,5 +165,99 @@
         </ActivityAction>
       </ui:OpenBrowser.Body>
     </ui:OpenBrowser>
+    <If Condition="[gender.Equals(&quot;male&quot;,StringComparison.InvariantCultureIgnoreCase)]" sap:VirtualizedContainerService.HintSize="713,270" sap2010:WorkflowViewState.IdRef="If_1">
+      <If.Then>
+        <ui:Check AlterIfDisabled="{x:Null}" ContinueOnError="{x:Null}" DelayAfter="{x:Null}" DelayBefore="{x:Null}" Action="Check" DisplayName="Check  Gender as male" sap:VirtualizedContainerService.HintSize="334,107" sap2010:WorkflowViewState.IdRef="Check_1">
+          <ui:Check.Target>
+            <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="4d1e4270-5359-476e-9813-878a4301f52b" InformativeScreenshot="2a80207e4b3cf6061b12d36c48faa776" Selector="&lt;html app='chrome.exe' title='HR On-Boarding Process Form – ExcelCult' /&gt;&lt;webctrl id='male' tag='INPUT' type='radio' /&gt;">
+              <ui:Target.TimeoutMS>
+                <InArgument x:TypeArguments="x:Int32" />
+              </ui:Target.TimeoutMS>
+              <ui:Target.WaitForReady>
+                <InArgument x:TypeArguments="ui:WaitForReady" />
+              </ui:Target.WaitForReady>
+            </ui:Target>
+          </ui:Check.Target>
+        </ui:Check>
+      </If.Then>
+      <If.Else>
+        <ui:Check AlterIfDisabled="{x:Null}" ContinueOnError="{x:Null}" DelayAfter="{x:Null}" DelayBefore="{x:Null}" Action="Check" DisplayName="Check  Gender as female" sap:VirtualizedContainerService.HintSize="334,107" sap2010:WorkflowViewState.IdRef="Check_2">
+          <ui:Check.Target>
+            <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="4d1e4270-5359-476e-9813-878a4301f52b" InformativeScreenshot="9e453d9674ce9395d6c60a571cf23ef9" Selector="&lt;html app='chrome.exe' title='HR On-Boarding Process Form – ExcelCult' /&gt;&lt;webctrl id='female' tag='INPUT' type='radio' /&gt;">
+              <ui:Target.TimeoutMS>
+                <InArgument x:TypeArguments="x:Int32" />
+              </ui:Target.TimeoutMS>
+              <ui:Target.WaitForReady>
+                <InArgument x:TypeArguments="ui:WaitForReady" />
+              </ui:Target.WaitForReady>
+            </ui:Target>
+          </ui:Check.Target>
+        </ui:Check>
+      </If.Else>
+    </If>
+    <ui:Check AlterIfDisabled="{x:Null}" ContinueOnError="{x:Null}" DelayAfter="{x:Null}" DelayBefore="{x:Null}" Action="Check" DisplayName="Check Accept checkbox" sap:VirtualizedContainerService.HintSize="713,107" sap2010:WorkflowViewState.IdRef="Check_3">
+      <ui:Check.Target>
+        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="8f3c88d4-970e-4959-afbd-abc0ce73e0e1" InformativeScreenshot="930973b6a86097f91ff9974013d7ada7" Selector="&lt;html app='chrome.exe' title='HR On-Boarding Process Form – ExcelCult' /&gt;&lt;webctrl tag='INPUT' type='checkbox' /&gt;">
+          <ui:Target.TimeoutMS>
+            <InArgument x:TypeArguments="x:Int32" />
+          </ui:Target.TimeoutMS>
+          <ui:Target.WaitForReady>
+            <InArgument x:TypeArguments="ui:WaitForReady" />
+          </ui:Target.WaitForReady>
+        </ui:Target>
+      </ui:Check.Target>
+    </ui:Check>
+    <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'Submit'" sap:VirtualizedContainerService.HintSize="713,107" sap2010:WorkflowViewState.IdRef="Click_1" KeyModifiers="None" MouseButton="BTN_LEFT">
+      <ui:Click.CursorPosition>
+        <ui:CursorPosition Position="Center">
+          <ui:CursorPosition.OffsetX>
+            <InArgument x:TypeArguments="x:Int32" />
+          </ui:CursorPosition.OffsetX>
+          <ui:CursorPosition.OffsetY>
+            <InArgument x:TypeArguments="x:Int32" />
+          </ui:CursorPosition.OffsetY>
+        </ui:CursorPosition>
+      </ui:Click.CursorPosition>
+      <ui:Click.Target>
+        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="36899a95-9079-423f-a577-f3b01ed90ba6" InformativeScreenshot="34e5e0ffb26745b376b1e06a8cf508ab" Selector="&lt;html app='chrome.exe' title='HR On-Boarding Process Form – ExcelCult' /&gt;&lt;webctrl aaname='Submit' tag='BUTTON' type='submit' /&gt;">
+          <ui:Target.TimeoutMS>
+            <InArgument x:TypeArguments="x:Int32" />
+          </ui:Target.TimeoutMS>
+          <ui:Target.WaitForReady>
+            <InArgument x:TypeArguments="ui:WaitForReady" />
+          </ui:Target.WaitForReady>
+        </ui:Target>
+      </ui:Click.Target>
+    </ui:Click>
+    <ui:GetValue ContinueOnError="{x:Null}" DisplayName="Get EmployeeId" sap:VirtualizedContainerService.HintSize="713,107" sap2010:WorkflowViewState.IdRef="GetValue_1">
+      <ui:GetValue.Target>
+        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="1761a41f-a6ad-4226-ad92-6855a81d03f7" InformativeScreenshot="5c4d163c43341225be7bc5f009c62686" Selector="&lt;html app='chrome.exe' title='HR On-Boarding Process Form – ExcelCult' /&gt;&lt;webctrl id='EmployeeId' tag='INPUT' /&gt;">
+          <ui:Target.TimeoutMS>
+            <InArgument x:TypeArguments="x:Int32" />
+          </ui:Target.TimeoutMS>
+          <ui:Target.WaitForReady>
+            <InArgument x:TypeArguments="ui:WaitForReady" />
+          </ui:Target.WaitForReady>
+        </ui:Target>
+      </ui:GetValue.Target>
+      <ui:GetValue.Value>
+        <OutArgument x:TypeArguments="x:String">[employeeId]</OutArgument>
+      </ui:GetValue.Value>
+    </ui:GetValue>
+    <ui:GetValue ContinueOnError="{x:Null}" DisplayName="Get Employee Email" sap:VirtualizedContainerService.HintSize="713,107" sap2010:WorkflowViewState.IdRef="GetValue_2">
+      <ui:GetValue.Target>
+        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="1761a41f-a6ad-4226-ad92-6855a81d03f7" InformativeScreenshot="61d208e0e29ce4fed4fd778da14427e1" Selector="&lt;html app='chrome.exe' title='HR On-Boarding Process Form – ExcelCult' /&gt;&lt;webctrl id='EmployeeEmail' tag='INPUT' /&gt;">
+          <ui:Target.TimeoutMS>
+            <InArgument x:TypeArguments="x:Int32" />
+          </ui:Target.TimeoutMS>
+          <ui:Target.WaitForReady>
+            <InArgument x:TypeArguments="ui:WaitForReady" />
+          </ui:Target.WaitForReady>
+        </ui:Target>
+      </ui:GetValue.Target>
+      <ui:GetValue.Value>
+        <OutArgument x:TypeArguments="x:String">[emmplyeeEmail]</OutArgument>
+      </ui:GetValue.Value>
+    </ui:GetValue>
   </Sequence>
 </Activity>
